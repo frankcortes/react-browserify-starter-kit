@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "express": "^4.12.0",
+    "flux": "^2.0.1",
+    "microevent-github": "^1.0.0",
+    "react": "^0.12.2",
+    "react-bootstrap": "^0.15.1",
+    "reactify": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "^1.0.5",
+    "gulp-watch": "^4.1.1",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
