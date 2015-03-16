@@ -10,11 +10,12 @@ var cssmin = require('gulp-cssmin');
 var rename = require("gulp-rename");
 var clean = require('gulp-clean');
 var preprocess = require('gulp-preprocess');
+var ghPages = require('gulp-gh-pages');
 
 //Profiles
 gulp.task('default', ['clean:pre', 'watch', 'react', 'less', 'server']);
 
-gulp.task('deploy', ['clean:pre', 'clean:post', 'preprocess:prod'])
+gulp.task('deploy', ['ghpages']);
 
 //Tasks
 gulp.task('server', ['preprocess:dev'], function() {
@@ -79,6 +80,12 @@ gulp.task('preprocess:prod', function() {
 		.pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('ghpages', ['clean:pre', 'clean:post', 'preprocess:prod'], function() {
+	return gulp.src('./dist/**/*')
+		.pipe(ghPages({
+			message: 'Deploy to gh-pages [timestamp]'
+		}));
+});
 
 gulp.task('watch', function() {
   gulp.watch('./less/**/**.less', ['less']);
