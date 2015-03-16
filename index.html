@@ -4,11 +4,23 @@
 	<link rel='icon' href='http://facebook.github.io/react/favicon.ico' type='image/x-icon'>
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!-- @ifdef DEBUG -->
+	<link rel='stylesheet' href='main.css'>
+	<!-- @endif -->
+	<!-- @ifndef DEBUG -->
+	<link rel='stylesheet' href='app.min.css'>
+	<!-- @endif -->
 </head>
 <body>
 <div class='container'>
 	<div id='app'></div>
-	<script src='dist/main.js'></script>
 </div>
+	<!-- @ifdef DEBUG -->
+	<script src='main.js'></script>
+	<!-- @endif -->
+	<!-- @ifndef DEBUG -->
+	<script src='app.min.js'></script>
+	<!-- @endif -->
 </body>
 </html>
